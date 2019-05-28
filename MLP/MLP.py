@@ -15,8 +15,6 @@ class DataLoader(object):
     def __init__(self):
 
         mnist = read_data_sets("/Users/wangzaijun/workspace/alibaba/PAI/handwritten_digits/")
-
-        # mnist = tf.contrib.learn.datasets.load_dataset("/Users/wangzaijun/workspace/alibaba/PAI/handwritten_digits/")
         # 训练
         self.train_data = mnist.train.images
         self.train_labels = np.asarray(mnist.train.labels, dtype=np.int32)
@@ -86,10 +84,11 @@ if __name__ == '__main__':
     cap = cv2.VideoCapture(0)
     while (1):
         # get a frame
-        ret, frame = cap.read()
-        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-
-        # gray = cv2.imread(os.path.join("/Users/wangzaijun/workspace/alibaba/tensorflow/tensorflow_study/test_data", "0.png"))
+        # ret, frame = cap.read()
+        # gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        #
+        gray = cv2.imread(os.path.join("../test_data", "0.png"))
+        gray = cv2.cvtColor(gray, cv2.COLOR_BGR2GRAY)
 
         gray = cv2.resize(gray, (28, 28))
 
