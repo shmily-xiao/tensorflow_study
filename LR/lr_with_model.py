@@ -10,7 +10,7 @@ y = tf.constant([[10.0], [20.0]])
 class Linear(tf.keras.Model):
     def __init__(self):
         super().__init__()
-        # 引入layers层的概念
+        # 引入layers层的概念 一层感知机
         self.dense = tf.keras.layers.Dense(units=1, kernel_initializer=tf.zeros_initializer(), bias_initializer=tf.zeros_initializer())
 
     def call(self, input):
